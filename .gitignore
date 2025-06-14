@@ -74,4 +74,12 @@ rust-project.json
 .history
 .ionide
 
+# Ignore .env file
+.env
+# Ignore database
+data/
+# Ignore log files
+logs/
+# Ignore migrations
+migrations/
 # End of https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,visualstudiocode,macos
