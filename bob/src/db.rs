@@ -21,12 +21,3 @@ pub async fn init_db() -> Result<SqlitePool, sqlx::Error> {
     sqlx::migrate!().run(&pool).await?;
     Ok(pool)
 }
-
-pub async fn validate_key(pool: &SqlitePool, key: &str) -> bool {
-    let row: (i64,) = sqlx::query_as("SELECT COUNT(1) FROM api_keys WHERE key = ? AND revoked = 0")
-        .bind(key)
-        .fetch_one(pool)
-        .await
-        .unwrap_or((0,));
-    row.0 > 0
-}

@@ -3,7 +3,6 @@ use axum::{
     routing::{get, post},
 };
 use dotenv::dotenv;
-use std::env;
 use tower_http::trace::TraceLayer;
 use tracing::info;
 use tracing_subscriber::EnvFilter;
